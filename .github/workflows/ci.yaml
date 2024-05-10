@@ -1,4 +1,4 @@
-name: ci-pipeline
+name: ci-cd-workflow
 on: [workflow_dispatch, push]
 jobs:
   ci-pipeline:
@@ -17,15 +17,37 @@ jobs:
 
       - name: Check formatting
         run: npm run prettier
-      
+
       - name: Check types
         run: npm run typecheck
 
       - name: Check linting
         run: npm run lint
-      
+
       - name: Execute tests
         run: npm run test
 
       - name: Execute build
         run: npm run build
+
+      - name: Upload dist as artefact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'dist/'
+
+  cd-pipeline:
+    needs: ci-pipeline
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Output env url
+        run: echo ${{ env.url }}
