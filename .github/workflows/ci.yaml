@@ -35,8 +35,16 @@ jobs:
         with:
           path: 'dist/'
 
-  cd-pipeline:
+  release-job:
     needs: ci-pipeline
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Custom action which creates a release on main pushes
+        run: echo "Hello World - create release"
+
+  cd-pipeline:
+    needs: [ci-pipeline, release-job]
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -51,3 +59,10 @@ jobs:
 
       - name: Output env url
         run: echo ${{ env.url }}
+
+  smoke-test:
+    needs: cd-pipeline
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output env url
+        run: echo "Hello World - test with playwright both firefox & chrome using a matrix"
