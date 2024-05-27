@@ -6,7 +6,7 @@
   "scripts": {
     "all": "npm run prettier && npm run typecheck && npm run lint && npm run test && npm run build",
     "dev": "vite",
-    "prettier": "prettier --check ./**/*.{ts,tsx,css,cjs} --cache --cache-strategy content '!package-lock.json'",
+    "prettier": "prettier --write ./**/*.{ts,tsx,css,cjs} --cache --cache-strategy content '!package-lock.json'",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test": "vitest run",
@@ -15,13 +15,15 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-syntax-highlighter": "^15.5.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.44.0",
     "@types/node": "^20.12.11",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
