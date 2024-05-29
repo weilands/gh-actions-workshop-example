@@ -1,66 +1,71 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import gitHubActionsLogo from '/github-actions.svg';
 import './App.css';
 import { increment } from './increment';
 import Concordion from './Concordion';
 import { CodeBlock } from './CodeBlock';
-import { codeString } from './excercises/01-hello-world';
+import { codeString as excercise01CodeString } from './excercises/01-basic-workflow';
+import { codeString as excercise02CodeString } from './excercises/02-basic-ci-pipeline';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+      <h1>
+        GitHub
+        <a href="https://github.com/features/actions" target="_blank">
+          <img src={gitHubActionsLogo} className="logo" alt="GitHub Actions logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => increment(count))}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
+        Workshop
+      </h1>
 
-      <div>
+      <div className="content">
         <Concordion title="Teminology">
-          <div className="card">
-            <button onClick={() => setCount((count) => increment(count))}>count is {count}</button>
-            <p>
-              Edit <code>src/App.tsx</code> and save to test HMR niuare niareun diaenr duinaed
-              niuart nida enrdaine rdaniueianeaediunetdiuan rdiuan eri drnatire nuiarte dan raeuinar
-              edinart eundae rtuianed ned uniare nuidae rna unaeuidna etrdn rein ein reiu nre
-            </p>
-          </div>
-          <Concordion title="Subsection 1.1">
-            <div className="card">
-              <button onClick={() => setCount((count) => increment(count))}>
-                count is {count}
-              </button>
-              <p>
-                Edit <code>src/App.tsx</code> and save to test HMR
-              </p>
-            </div>
-            <CodeBlock language="yaml" value={codeString} />
-          </Concordion>
+          Edit <code>src/App.tsx</code> and save to test HMR niuare niareun diaenr duinaed niuart
+          nida enrdaine rdaniueianeaediunetdiuan rdiuan eri drnatire nuiarte dan raeuinar edinart
+          eundae rtuianed ned uniare nuidae rna unaeuidna etrdn rein ein reiu nre
         </Concordion>
-        <Concordion title="Basic Workflows">
-          {' '}
-          <Concordion title="Subsection 1.1">
-            <div className="card">
-              <button onClick={() => setCount((count) => increment(count))}>
-                count is {count}
-              </button>
-              <p>
-                Edit <code>src/App.tsx</code> and save to test HMR
-              </p>
-            </div>
+
+        <Concordion title="Excercise 1: Basic Workflows">
+          <CodeBlock language="yaml" value={excercise01CodeString} />
+          (todo: source https://docs.github.com/en/actions/quickstart)
+        </Concordion>
+
+        <Concordion title="Excercise 2: Basic CI Pipeline">
+          Create a workflow which:
+          <ul>
+            <li>is called ci-workflow</li>
+            <li>is triggered whenever a push is performed</li>
+            <li>enable the workflow to be triggered manually</li>
+            <li>contains a job called ci-pipeline</li>
+            <li>runs on a GitHub hosted ubuntu runner</li>
+            <li>checks out the code</li>
+            <li>sets up node 20</li>
+            <li>
+              performs the steps `npm ci`, `npm run prettier`, `npm run typecheck`, `npm run test`,
+              `npm run build`
+            </li>
+          </ul>
+          <Concordion title="Helpful Links">
+            <a
+              href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows"
+              target="_blank"
+            >
+              Workflow Triggers
+            </a>
+            <a
+              href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners"
+              target="_blank"
+            >
+              GitHub Runners
+            </a>
+            <a href="https://github.com/actions" target="_blank">
+              GitHub provided Actions
+            </a>
+          </Concordion>
+          <Concordion title="Solution Excercise 2">
+            <CodeBlock language="yaml" value={excercise02CodeString} />
           </Concordion>
         </Concordion>
       </div>
@@ -71,55 +76,6 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => increment(count))}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => increment(count))}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => increment(count))}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => increment(count))}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => increment(count))}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-        <div className="card">
-          <button onClick={() => setCount((count) => increment(count))}>count is {count}</button>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test HMR
-          </p>
-        </div>
-        <div className="card">
-          <button onClick={() => setCount((count) => increment(count))}>count is {count}</button>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test HMR
-          </p>
-        </div>
-        <div className="card">
-          <button onClick={() => setCount((count) => increment(count))}>count is {count}</button>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test HMR
-          </p>
-        </div>
-      </div>
-      <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
     </>
   );
 }
