@@ -1,15 +1,12 @@
-import { useState } from 'react';
 import gitHubActionsLogo from '/github-actions.svg';
 import './App.css';
-import { increment } from './increment';
 import Concordion from './Concordion';
 import { CodeBlock } from './CodeBlock';
 import { codeString as excercise01CodeString } from './excercises/01-basic-workflow';
 import { codeString as excercise02CodeString } from './excercises/02-basic-ci-pipeline';
+import { codeString as excercise03CodeString } from './excercises/03-ci-cd-pipeline';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <h1>
@@ -68,13 +65,29 @@ function App() {
             <CodeBlock language="yaml" value={excercise02CodeString} />
           </Concordion>
         </Concordion>
-      </div>
 
-      <div className="card">
-        <button onClick={() => setCount((count) => increment(count))}>count is {count}</button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+        <Concordion title="Excercise 3: CI/CD Pipeline">
+          todo: activate github pages: settings -{'>'} pages -{'>'} source: GitHub Actions
+          <ul>
+            <li>Rename the workflow created in Excercise 2 to ci-cd</li>
+            <li>
+              Upload an artifact of the build using the GitHub provided action
+              `actions/upload-pages-artifact@v3` with the parameter `path: 'dist/'`
+            </li>
+            <li>
+              create a second job called cd-pipeline, which requires the ci-pipeline to successfully
+              finish
+            </li>
+            <li>provide the github.token with the additional permissions: `pages: write`</li>
+            <li>add an environment with the name github-pages</li>
+            <li>
+              deploy the GitHub Pages using the GitHub provided action `actions/deploy-pages@v4`
+            </li>
+          </ul>
+          <Concordion title="Solution Excercise 3">
+            <CodeBlock language="yaml" value={excercise03CodeString} />
+          </Concordion>
+        </Concordion>
       </div>
     </>
   );
