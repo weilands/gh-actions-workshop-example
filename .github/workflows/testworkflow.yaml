@@ -33,7 +33,7 @@ jobs:
   A:
     runs-on: ubuntu-latest
     needs: [B, C]
-    if: ${{ needs.B.result == 'success' || needs.C.result == 'success' }}
+    if: (success() && needs.B.result == 'success' || needs.C.result == 'success' )
     steps:
       - name: Run job A
         run: echo "Job A"
