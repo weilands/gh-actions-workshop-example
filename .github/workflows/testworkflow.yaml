@@ -20,7 +20,9 @@ jobs:
     if: ${{ needs.Z.outputs.result == 'true' }}
     steps:
       - name: Run job B
-        run: echo "Job B"
+        run: |
+          echo "Job B"
+          exit 1
 
   C:
     runs-on: ubuntu-latest
