@@ -26,7 +26,8 @@ function App() {
 
         <Concordion title="Excercise 1: Basic Workflows">
           <CodeBlock language="yaml" value={excercise01CodeString} />
-          (todo: source https://docs.github.com/en/actions/quickstart)
+          (todo: source https://docs.github.com/en/actions/quickstart) * Where to put it * Explore
+          the Actions tab * Restart one run * Disable the workflow
         </Concordion>
 
         <Concordion title="Excercise 2: Basic CI Pipeline">
@@ -66,6 +67,15 @@ function App() {
           </Concordion>
         </Concordion>
 
+        <Concordion title="Control over Workflow">* needs * github.token</Concordion>
+
+        <Concordion title="Storing Data">
+          artefacts (bound to workflow, shortlived), cache (bound to repo/branch, shortlived),
+          releases (bound to repo), ghcr
+        </Concordion>
+
+        <Concordion title="Environment">Deployment Targets like prod/nonprod</Concordion>
+
         <Concordion title="Excercise 3: CI/CD Pipeline">
           todo: activate github pages: settings -{'>'} pages -{'>'} source: GitHub Actions
           <ul>
@@ -83,10 +93,18 @@ function App() {
             <li>
               deploy the GitHub Pages using the GitHub provided action `actions/deploy-pages@v4`
             </li>
+            <li>
+              after the successful CI/CD execution, go to your repository settings -{'>'}{' '}
+              Environments and inspect the github-pages environment settings
+            </li>
           </ul>
           <Concordion title="Solution Excercise 3">
             <CodeBlock language="yaml" value={excercise03CodeString} />
           </Concordion>
+        </Concordion>
+
+        <Concordion title="Real World Example Demo">
+          <div></div>
         </Concordion>
       </div>
     </>
