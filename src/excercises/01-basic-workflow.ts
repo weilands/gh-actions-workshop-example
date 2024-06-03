@@ -1,7 +1,7 @@
 export const codeString = `
 name: GitHub Actions Demo
 run-name: \${{ github.actor }} is testing out GitHub Actions
-on: [push]
+on: [push, workflow_dispatch]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
