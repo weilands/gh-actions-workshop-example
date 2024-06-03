@@ -64,6 +64,7 @@ function App() {
           </Concordion>
           <Concordion title="Solution Excercise 2">
             <CodeBlock language="yaml" value={excercise02CodeString} />
+            <p>* Hier noch über GitHub Runners und Self Hosted Runners sprechen</p>
           </Concordion>
         </Concordion>
 
@@ -103,7 +104,13 @@ function App() {
           </Concordion>
         </Concordion>
 
-        <Concordion title="Real World Example Demo">
+        <Concordion title="Alternative 1: Real World Example">
+          <div></div>
+        </Concordion>
+        <Concordion title="Alternative 2: Open End Questions">
+          <div></div>
+        </Concordion>
+        <Concordion title="Alternative 3: Other prepared topics">
           <div></div>
         </Concordion>
       </div>
