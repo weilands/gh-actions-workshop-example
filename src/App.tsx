@@ -104,14 +104,16 @@ function App() {
           </Concordion>
         </Concordion>
 
-        <Concordion title="Alternative 1: Real World Example">
-          <div></div>
-        </Concordion>
-        <Concordion title="Alternative 2: Open End Questions">
-          <div></div>
-        </Concordion>
-        <Concordion title="Alternative 3: Other prepared topics">
-          <div></div>
+        <Concordion title="Alternatives">
+          <Concordion title="Alternative 1: Real World Example">
+            <div></div>
+          </Concordion>
+          <Concordion title="Alternative 2: Open End Questions">
+            <div></div>
+          </Concordion>
+          <Concordion title="Alternative 3: Other prepared topics">
+            <div></div>
+          </Concordion>
         </Concordion>
       </div>
     </>
