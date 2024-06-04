@@ -15,10 +15,11 @@ function App() {
   return (
     <>
       <h1>
-        GitHub
         <a href="https://github.com/features/actions" target="_blank">
           <img src={gitHubActionsLogo} className="logo" alt="GitHub Actions logo" />
         </a>
+        GitHub @ TNG
+        –
         Workshop
       </h1>
 
@@ -152,15 +153,31 @@ function App() {
           </Concordion>
         </Concordion>
 
-        <Concordion title="Alternatives">
-          <Concordion title="Alternative 1: Real World Example">
-            <div></div>
+        <Concordion title="Follow Ups">
+          <Concordion title="Real World Example">
+            <div>
+              <ul>
+                <li><a href="https://github.com/magma/magma/blob/master/.github/workflows/bazel.yml">Magma</a></li>
+                <li><a href="https://github.com/goharbor/go-client">Harbor Go Client</a></li>
+                <li>...</li>
+              </ul>
+            </div>
           </Concordion>
-          <Concordion title="Alternative 2: Open End Questions">
-            <div></div>
-          </Concordion>
-          <Concordion title="Alternative 3: Other prepared topics">
-            <div></div>
+          <Concordion title="Relevant Topics">
+            <div>
+              <ul>
+                <li><a href="https://docs.github.com/en/actions/using-workflows/reusing-workflows">Reusing workflows</a></li>
+                <li><a href="https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions">Using secrets in GitHub Actions</a></li>
+                <li><a href="https://github.com/TNG-GitHub-Actions-Workshop/empty-sample/settings/secrets/actions">Secrets in Repos</a></li>
+                <li><a href="https://github.com/organizations/TNG-GitHub-Actions-Workshop/settings/secrets/actions">Secrets in Orgs</a></li>
+                <li><a href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment#creating-an-environment">Creating an environment</a></li>
+                <li><a href="https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/about-self-hosted-runners">About self-hosted runners</a></li>
+                <li><a href="https://docs.github.com/en/actions/hosting-your-own-runners/managing-self-hosted-runners/autoscaling-with-self-hosted-runners">Autoscaling with self-hosted runners</a></li>
+                <li><a href="https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows">Caching dependencies to speed up workflows</a></li>
+                <li><a href="https://docs.github.com/en/packages/quickstart">GitHub Packages</a></li>
+                <li><a href="https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry">Working with the Container registry</a></li>
+              </ul>
+            </div>
           </Concordion>
         </Concordion>
       </div>
