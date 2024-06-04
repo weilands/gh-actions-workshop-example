@@ -2,14 +2,14 @@ import gitHubActionsLogo from '/github-actions.svg';
 import './App.css';
 import Concordion from './Concordion';
 import { CodeBlock } from './CodeBlock';
-import { codeString as excercise01CodeString } from './excercises/01-basic-workflow';
-import { codeString as excercise02CodeString } from './excercises/02-basic-ci-pipeline';
-import { codeString as excercise03CodeString } from './excercises/03-ci-cd-pipeline';
+import { codeString as exercise01CodeString } from './exercises/01-basic-workflow';
+import { codeString as exercise02CodeString } from './exercises/02-basic-ci-pipeline';
+import { codeString as exercise03CodeString } from './exercises/03-ci-cd-pipeline';
 import {
-  codeString_a as excercise04CodeString_a,
-  codeString_b as excercise04CodeString_b
-} from './excercises/04-matrix-job';
-import { codeString as excercise05CodeString } from './excercises/05-composite-action';
+  codeString_a as exercise04CodeString_a,
+  codeString_b as exercise04CodeString_b
+} from './exercises/04-matrix-job';
+import { codeString as exercise05CodeString } from './exercises/05-composite-action';
 
 function App() {
   return (
@@ -18,18 +18,18 @@ function App() {
         <a href="https://github.com/features/actions" target="_blank">
           <img src={gitHubActionsLogo} className="logo" alt="GitHub Actions logo" />
         </a>
-        GitHub @ TNG
+        GitHub Actions @ TNG
         –
         Workshop
       </h1>
 
       <div className="content">
-        <Concordion title="Excercise 1: Basic Workflows">
+        <Concordion title="Exercise 1: Basic Workflows">
           Create your first GitHub Actions Workflow:
           <ul>
             <li>
               In your fork, create the file <i>.github/workflows/hello.yaml</i> with this content (<a target="_blank" href="https://docs.github.com/en/actions/quickstart">Source</a>):
-              <CodeBlock language="yaml" value={excercise01CodeString} />
+              <CodeBlock language="yaml" value={exercise01CodeString} />
             </li>
             <li>
               Explore the GitHub Actions Tab in `./actions`.
@@ -42,7 +42,7 @@ function App() {
           </ul>
         </Concordion>
 
-        <Concordion title="Excercise 2: Basic CI Pipeline">
+        <Concordion title="Exercise 2: Basic CI Pipeline">
           Create a workflow which:
           <ul>
             <li>Is named ci-workflow</li>
@@ -77,7 +77,7 @@ function App() {
                 <li>Check out the source code</li>
                 <li>Set up NodeJS 20</li>
                 <li>
-                  Runs the following npm scripts:
+                  Runs the following npm scripts as commands in the shell:
                   <CodeBlock language="bash" value="npm ci
 npm run prettier
 npm run typecheck
@@ -92,8 +92,8 @@ npm run build" />
               </ul>
             </li>
           </ul>
-          <Concordion title="Solution Excercise 2">
-            <CodeBlock language="yaml" value={excercise02CodeString} />
+          <Concordion title="Solution Exercise 2">
+            <CodeBlock language="yaml" value={exercise02CodeString} />
             <ul>
               <li>
                 Docs: <a target="_blank" href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories">Standard GitHub-hosted runners for Public repositories</a>
@@ -102,7 +102,7 @@ npm run build" />
           </Concordion>
         </Concordion>
 
-        <Concordion title="Excercise 3: CI/CD Pipeline">
+        <Concordion title="Exercise 3: CI/CD Pipeline">
           Extend your CI-Job from the previous exercise with a CD-Job.
           Let's deploy our application to GitHub Pages.
 
@@ -112,7 +112,7 @@ npm run build" />
             </li>
             <li>Rename the workflow created in Exercise 2 to <i>ci-cd</i></li>
             <li>
-              Upload the built artifact using the <a target="_blank" href="https://github.com/actions/upload-pages-artifact">
+              Upload the build artifact using the <a target="_blank" href="https://github.com/actions/upload-pages-artifact">
                 <i>actions/upload-pages-artifact@v3</i></a> with the parameter <i>path: 'dist/'</i>
             </li>
             <li>Create a second job to deploy this artifact
@@ -129,8 +129,8 @@ npm run build" />
             </li>
 
           </ul>
-          <Concordion title="Solution Excercise 3">
-            <CodeBlock language="yaml" value={excercise03CodeString} />
+          <Concordion title="Solution Exercise 3">
+            <CodeBlock language="yaml" value={exercise03CodeString} />
             <ul>
               <li>
                 After the successful CI/CD execution, go to your Repository: <i>Settings &#x3e;
@@ -140,22 +140,22 @@ npm run build" />
           </Concordion>
         </Concordion>
 
-        <Concordion title="Excercise 4: Matrix Jobs">
+        <Concordion title="Exercise 4: Matrix Jobs">
           After the successful deployment of your App to GitHub Pages, let's add a matrix job to test your App with different browsers.
 
           <ul>
             <li>
-              Add the following code snippet to your <i>ci-cd-workflow</i> as a new job and omplete the <i>TODO</i> statements as listed in the new code snippet
-              <CodeBlock language="yaml" value={excercise04CodeString_a} />
+              Add the following code snippet to your <i>ci-cd-workflow</i> as a new job and complete the <i>TODO</i> statements as listed in the new code snippet
+              <CodeBlock language="yaml" value={exercise04CodeString_a} />
             </li>
             <li>Docs: <a href="https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs" target="_blank">Using a matrix for your jobs</a></li>
           </ul>
-          <Concordion title="Solution Excercise 4">
-            <CodeBlock language="yaml" value={excercise04CodeString_b} />
+          <Concordion title="Solution Exercise 4">
+            <CodeBlock language="yaml" value={exercise04CodeString_b} />
           </Concordion>
         </Concordion>
 
-        <Concordion title="Excercise 5: Composite Action">
+        <Concordion title="Exercise 5: Composite Action">
           Remove duplicated code with a <a href="https://docs.github.com/en/actions/creating-actions/creating-a-composite-action" target="_blank">Composite Action</a>:
           <ul>
             <li>
@@ -165,8 +165,8 @@ npm run build" />
             </li>
             <li>Put the action inside this repo in <i>.github/actions/install/action.yaml</i></li>
           </ul>
-          <Concordion title="Solution Excercise 5">
-            <CodeBlock language="yaml" value={excercise05CodeString} />
+          <Concordion title="Solution Exercise 5">
+            <CodeBlock language="yaml" value={exercise05CodeString} />
           </Concordion>
         </Concordion>
 
