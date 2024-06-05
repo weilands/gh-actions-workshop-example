@@ -315,24 +315,27 @@ npm run build"
           </ul>
           <Concordion title="Solution Exercise 6">
             <CodeBlock language="yaml" value={exercise06CodeString} />
+            <ul>
+              <li>
+                Discuss the check of the dist folder based on the{' '}
+                <a href="https://github.com/actions/typescript-action">
+                  TypeScript-Action Template
+                </a>
+                .
+              </li>
+              <li>Discuss sha-pinning when using publicly available actions.</li>
+              <li>
+                Discuss{' '}
+                <a
+                  href="https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action"
+                  target="_blank"
+                >
+                  Docker Actions
+                </a>
+                , e.g. via <a href="https://github.com/aquasecurity/trivy-action">Trivy</a>.
+              </li>
+            </ul>
           </Concordion>
-          <ul>
-            <li>
-              Discuss the check of the dist folder based on the{' '}
-              <a href="https://github.com/actions/typescript-action">TypeScript-Action Template</a>.
-            </li>
-            <li>Discuss sha-pinning when using publicly available actions.</li>
-            <li>
-              Discuss{' '}
-              <a
-                href="https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action"
-                target="_blank"
-              >
-                Docker Actions
-              </a>
-              , e.g. via <a href="https://github.com/aquasecurity/trivy-action">Trivy</a>.
-            </li>
-          </ul>
         </Concordion>
 
         <Concordion title="Follow Ups">
