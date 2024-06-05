@@ -43,6 +43,7 @@ jobs:
   cd-pipeline:
     needs: [ci-pipeline]
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     permissions:
       pages: write
       id-token: write
@@ -62,6 +63,7 @@ jobs:
   smoke-test:
     needs: cd-pipeline
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     timeout-minutes: 3
     strategy:
       matrix:
