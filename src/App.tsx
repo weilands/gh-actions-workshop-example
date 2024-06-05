@@ -10,6 +10,7 @@ import {
   codeString_b as exercise04CodeString_b
 } from './exercises/04-matrix-job';
 import { codeString as exercise05CodeString } from './exercises/05-composite-action';
+import { codeString as exercise06CodeString } from './exercises/06-javascript-action';
 
 function App() {
   return (
@@ -290,6 +291,42 @@ npm run build"
           <Concordion title="Solution Exercise 5">
             <CodeBlock language="yaml" value={exercise05CodeString} />
           </Concordion>
+        </Concordion>
+
+        <Concordion title="Exercise 6: JavaScript Action">
+          Tag main branch commits with a
+          <a
+            href="https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action"
+            target="_blank"
+          >
+            JavaScript Action
+          </a>
+          :
+          <ul>
+            <li>a</li>
+            <li>a</li>
+            <li>a</li>
+            <li>Compile your code</li>
+          </ul>
+          <Concordion title="Solution Exercise 6">
+            <CodeBlock language="yaml" value={exercise06CodeString} />
+          </Concordion>
+          <ul>
+            <li>
+              Discuss the check of the dist folder based on the{' '}
+              <a href="https://github.com/actions/typescript-action">TypeScript-Action Template</a>.
+            </li>
+            <li>Discuss sha-pinning when using publicly available actions.</li>
+            <li>
+              Discuss{' '}
+              <a
+                href="https://docs.github.com/en/actions/creating-actions/creating-a-docker-container-action"
+                target="_blank"
+              >
+                Docker Actions
+              </a>
+            </li>
+          </ul>
         </Concordion>
 
         <Concordion title="Follow Ups">

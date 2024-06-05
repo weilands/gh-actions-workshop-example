@@ -25,6 +25,16 @@ jobs:
       - name: Execute build
         run: npm run build
 
+      - name: Get next Semantic Version
+        id: next-semver
+        uses: ./.github/actions/semver
+
+      - name: Tag
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git tag ${{ steps.next-semver.outputs.semver }}
+          git push origin ${{ steps.next-semver.outputs.semver }}
+
       - name: Upload dist as artefact
         uses: actions/upload-pages-artifact@v3
         with:
