@@ -1,21 +1,25 @@
 export const codeString = `
-# .github/actions/install/action.yaml
-name: 'Install prerequisites and dependencies'
-description: 'Sets up all requirements.'
+# .github/actions/semver/src/main.ts
+const githubToken = core.getInput('token');
+const devVersionSuffix = core.getInput('dev-version-suffix');
 
-runs:
-  using: composite
-  steps:
-    - name: Set up node 20
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
+...
 
-    - name: Install dependencies
-      shell: bash
-      run: npm ci
+core.setOutput('semver', semver);
 
 # Reference in existing workflow
-- name: Install prerequisites and dependencies
-  uses: ./.github/actions/install
+permissions:
+  contents: write
+
+...
+
+- name: Get next Semantic Version
+id: next-semver
+uses: ./.github/actions/semver
+
+- name: Tag
+if: github.ref == 'refs/heads/main'
+run: |
+  git tag \${{ steps.next-semver.outputs.semver }}
+  git push origin \${{ steps.next-semver.outputs.semver }}
 `.trim();

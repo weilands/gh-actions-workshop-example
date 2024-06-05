@@ -303,10 +303,15 @@ npm run build"
           </a>
           :
           <ul>
-            <li>a</li>
-            <li>a</li>
-            <li>a</li>
-            <li>Compile your code</li>
+            <li>
+              Complete the TODOs in <i>.github/actions/semver/src/main.ts</i>{' '}
+            </li>
+            <li>Execute the tests of your action.</li>
+            <li>Compile your action.</li>
+            <li>
+              Reference your action in your ci-pipeline and execute it only on the main branch
+            </li>
+            <li>Push the resulting semantic version as a git tag to your repository.</li>
           </ul>
           <Concordion title="Solution Exercise 6">
             <CodeBlock language="yaml" value={exercise06CodeString} />
@@ -325,6 +330,7 @@ npm run build"
               >
                 Docker Actions
               </a>
+              , e.g. via <a href="https://github.com/aquasecurity/trivy-action">Trivy</a>.
             </li>
           </ul>
         </Concordion>

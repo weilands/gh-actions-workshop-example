@@ -6,7 +6,8 @@
   "scripts": {
     "all": "npm run prettier && npm run typecheck && npm run lint && npm run test && npm run build",
     "dev": "vite",
-    "prettier": "prettier --write ./**/*.{ts,tsx,css,cjs} --cache --cache-strategy content '!package-lock.json'",
+    "prettier": "prettier --check ./**/*.{ts,tsx,css,cjs} --cache --cache-strategy content '!package-lock.json'",
+    "prettier:write": "prettier --write ./**/*.{ts,tsx,css,cjs} --cache --cache-strategy content '!package-lock.json'",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test": "vitest run",
