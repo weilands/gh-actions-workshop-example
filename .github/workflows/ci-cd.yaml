@@ -2,6 +2,8 @@ name: ci-cd-workflow
 on: [workflow_dispatch, push]
 jobs:
   ci-pipeline:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
