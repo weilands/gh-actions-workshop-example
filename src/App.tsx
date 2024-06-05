@@ -294,7 +294,7 @@ npm run build"
         </Concordion>
 
         <Concordion title="Exercise 6: JavaScript Action">
-          Tag main branch commits with a
+          Tag main branch commits with a{' '}
           <a
             href="https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action"
             target="_blank"
@@ -306,12 +306,12 @@ npm run build"
             <li>
               Complete the TODOs in <i>.github/actions/semver/src/main.ts</i>{' '}
             </li>
-            <li>Execute the tests of your action.</li>
-            <li>Compile your action.</li>
+            <li>Execute the tests of the action</li>
+            <li>Compile the action</li>
             <li>
               Reference your action in your ci-pipeline and execute it only on the main branch
             </li>
-            <li>Push the resulting semantic version as a git tag to your repository.</li>
+            <li>Push the resulting semantic version as a git tag to your repository</li>
           </ul>
           <Concordion title="Solution Exercise 6">
             <CodeBlock language="yaml" value={exercise06CodeString} />
@@ -323,7 +323,7 @@ npm run build"
                 </a>
                 .
               </li>
-              <li>Discuss sha-pinning when using publicly available actions.</li>
+              <li>Discuss sha-pinning when using publicly available actions</li>
               <li>
                 Discuss{' '}
                 <a
