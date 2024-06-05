@@ -9,6 +9,6 @@ export default defineConfig({
   base: '/gh-actions-workshop-example/',
   test: {
     // include: ['src/**/*.{test}.?(c|m)[jt]s?(x)']
-    exclude: [...configDefaults.exclude, '**/tests/**']
+    exclude: [...configDefaults.exclude, '**/tests/**', '.github/actions/**']
   }
 });
