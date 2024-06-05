@@ -1,7 +1,7 @@
 {
   "name": "gh-actions-workshop-example",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "all": "npm run prettier && npm run typecheck && npm run lint && npm run test && npm run build",
