@@ -43,31 +43,39 @@ function App() {
         </Concordion>
 
         <Concordion title="Exercise 2: Basic CI Pipeline">
-          Create a workflow which:
+          Follow the docs on "<a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions" target="_blank">Workflow syntax for GitHub Actions</a>" and create a workflow which:
+
           <ul>
             <li>Is named ci-workflow</li>
             <li>Is triggered whenever
               <ul>
                 <li>A push is performed</li>
                 <li>It is manually triggered</li>
-                <li><a
+                <li>Docs: <a
                     href="https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows"
                     target="_blank"
                 >
-                  Docs: Workflow Triggers
+                  Workflow Triggers
                 </a></li>
               </ul>
             </li>
-            <li>Contains a job called ci-pipeline</li>
+            <li>
+              Contains a job called ci-pipeline
+              <ul>
+                <li>Docs: <a href="https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow" target="_blank">
+                  Using jobs in a workflow
+                </a></li>
+              </ul>
+            </li>
             <li>
               Runs on a GitHub hosted ubuntu runner
               <ul>
                 <li>
-                  <a
+                  Docs: <a
                     href="https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners"
                     target="_blank"
                   >
-                    Docs: GitHub Runners
+                    GitHub Runners
                   </a>
                 </li>
               </ul>
@@ -103,8 +111,10 @@ npm run build" />
         </Concordion>
 
         <Concordion title="Exercise 3: CI/CD Pipeline">
+          We did just build our application. Let's deploy it to GitHub Pages now!
+          <br />
+          <br />
           Extend your CI-Job from the previous exercise with a CD-Job.
-          Let's deploy our application to GitHub Pages.
 
           <ul>
             <li>
@@ -112,14 +122,21 @@ npm run build" />
             </li>
             <li>Rename the workflow created in Exercise 2 to <i>ci-cd</i></li>
             <li>
-              Upload the build artifact using the <a target="_blank" href="https://github.com/actions/upload-pages-artifact">
+              Extend the existing ci job and upload the build artifact using the <a target="_blank" href="https://github.com/actions/upload-pages-artifact">
                 <i>actions/upload-pages-artifact@v3</i></a> with the parameter <i>path: 'dist/'</i>
             </li>
             <li>Create a second job to deploy this artifact
               <ul>
                 <li>Called it <i>cd-pipeline</i></li>
                 <li>Create a dependency to the <i>ci-pipeline</i> job</li>
-                <li>Provide the github.token with the additional permissions: <i>pages: write</i></li>
+                <li>
+                  Provide the github.token with the additional permissions: <i>pages: write</i> next to <i>id-token</i>
+                  <ul>
+                    <li>
+                      Docs: <a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#defining-access-for-the-github_token-scopes" target="_blank">Defining access for the GITHUB_TOKEN scopes</a>
+                    </li>
+                  </ul>
+                </li>
                 <li><a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idenvironment" target="_blank">Add an environment</a> with the name <i>github-pages</i></li>
                 <li>
                   Deploy the GitHub Pages using the GitHub provided action <a
@@ -149,6 +166,7 @@ npm run build" />
               <CodeBlock language="yaml" value={exercise04CodeString_a} />
             </li>
             <li>Docs: <a href="https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs" target="_blank">Using a matrix for your jobs</a></li>
+            <li>Docs: <a href="https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idoutputs" target="_blank">Job outputs</a></li>
           </ul>
           <Concordion title="Solution Exercise 4">
             <CodeBlock language="yaml" value={exercise04CodeString_b} />
