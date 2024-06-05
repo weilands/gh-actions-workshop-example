@@ -314,7 +314,7 @@ npm run build"
             <li>Push the resulting semantic version as a git tag to your repository</li>
           </ul>
           <Concordion title="Solution Exercise 6">
-            <CodeBlock language="yaml" value={exercise06CodeString} />
+            <CodeBlock language="typescript" value={exercise06CodeString} />
             <ul>
               <li>
                 Discuss the check of the dist folder based on the{' '}
