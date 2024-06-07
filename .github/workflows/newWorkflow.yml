@@ -32,4 +32,37 @@ jobs:
     steps:
       - name: deploy
         uses: actions/deploy-pages@v4
+  smoke-test:
+    strategy:
+      matrix:
+        browser: [firefox, chromium]
+    needs: cd-pipeline
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
   
+      - name: Set up node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+  
+      - name: Install dependencies
+        run: npm ci
+  
+      - name: Install Playwright Browsers
+        run: npx playwright install ${{ matrix.browser }}
+  
+      - name: Run Playwright tests
+        run: npx playwright test --project 
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ steps.deployment.outputs.page_url }}
+  
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report-${{ matrix.browser }}
+          path: playwright-report/
+          retention-days: 1
+    
