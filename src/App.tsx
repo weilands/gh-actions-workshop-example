@@ -158,17 +158,10 @@ npm run build"
               with the parameter <i>path: 'dist/'</i>
             </li>
             <li>
-              Upload the build artifact using the{' '}
-              <a target="_blank" href="https://github.com/actions/upload-pages-artifact">
-                <i>actions/upload-pages-artifact@v3</i>
-              </a>{' '}
-              with the parameter <i>path: 'dist/'</i>
-            </li>
-            <li>
               Create a second job to deploy this artifact
               <ul>
                 <li>
-                  Called it <i>cd-pipeline</i>
+                  Call it <i>cd-pipeline</i>
                 </li>
                 <li>
                   Create a dependency to the <i>ci-pipeline</i> job
@@ -198,7 +191,7 @@ npm run build"
                   with the name <i>github-pages</i>
                 </li>
                 <li>
-                  Called it <i>cd-pipeline</i>
+                  Call it <i>cd-pipeline</i>
                 </li>
                 <li>
                   Create a dependency to the <i>ci-pipeline</i> job
