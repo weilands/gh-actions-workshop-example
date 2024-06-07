@@ -55,7 +55,7 @@ jobs:
         run: npx playwright install ${{ matrix.browser }}
   
       - name: Run Playwright tests
-        run: npx playwright test --project 
+        run: npx playwright test --project ${{ matrix.browser }}
         env:
           PLAYWRIGHT_BASE_URL: ${{ steps.deployment.outputs.page_url }}
   
