@@ -27,6 +27,7 @@ jobs:
     needs: ci-pipeline
     permissions:
       pages: write
+      id-token: write
     environment: github-pages
     steps:
       - name: deploy
